@@ -68,7 +68,7 @@ def main():
                 camera.annotate_text = 'Inference: {:5.2f}ms FPS: {:3.1f}'.format(inference_ms, fps_ms)
                 for result in results:
                    camera.annotate_text += '\n{:.0f}% {}'.format(100*result[1], labels[result[0]])
-                with open('inference_results.py', 'w') as f:
+                with open('inference_results.py', 'a') as f:
                   print(camera.annotate_text, file=f)
         finally:
             camera.stop_preview()
